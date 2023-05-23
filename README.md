@@ -7,3 +7,9 @@
 > font implement using < link > in _document.js || 
 >
 > font mentioned in global.css under font-family: "Roboto Slab"
+
+===================================================================================================
+
+# Section 14 
+
+## Netflix Component Architecture 
