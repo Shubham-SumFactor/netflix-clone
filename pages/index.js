@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Banner from '../components/banner/banner'
 import NavBar from '@/components/nav/navbar'
+import Card from '@/components/card/card'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -23,10 +24,15 @@ export default function Home() {
           subTitle="Mysterious Rise"
           imgUrl="/static/HP.webp"
           />
-         {/* 
-         <Nav Bar
-         <Card />
-      */}
+         
+         <Card imgUrl='/static/HP.webp'
+          size="large" />
+         
+         <Card imgUrl='/static/HP.webp'
+          size="medium" />
+
+         <Card imgUrl='/static/HP.webp'
+          size="small" />
     </div>
   )
 }
