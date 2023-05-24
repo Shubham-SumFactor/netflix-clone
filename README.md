@@ -13,3 +13,8 @@
 # Section 14 
 
 ## Netflix Component Architecture 
+> Nav bar having Logo, mylist and loginId
+>
+> banner having title, subtitle , play and IMG
+>
+> category wise distinction
