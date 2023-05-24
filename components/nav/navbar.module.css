@@ -64,7 +64,7 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    color: var(--white);
+    color: var(--black);
   }
   
   .username {
