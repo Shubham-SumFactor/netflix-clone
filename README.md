@@ -24,4 +24,6 @@
 > npm install framer motion
 
 ## Youtube API
-
+> SSR 
+> YT data based API
+> Popular | Travel| Disney| Productivity cards added with functionality
