@@ -18,3 +18,10 @@
 > banner having title, subtitle , play and IMG
 >
 > category wise distinction
+>
+> npm install classnames
+>
+> npm install framer motion
+
+## Youtube API
+
