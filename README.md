@@ -27,3 +27,10 @@
 > SSR 
 > YT data based API
 > Popular | Travel| Disney| Productivity cards added with functionality
+==========================================================================
+
+# Section 15
+## Authentication with MAgic 
+> Passwordless Authentication
+>
+> Sign-in 
