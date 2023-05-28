@@ -27,3 +27,27 @@
 > SSR 
 > YT data based API
 > Popular | Travel| Disney| Productivity cards added with functionality
+==========================================================================
+
+# Section 15
+## Authentication with MAgic 
+> Passwordless Authentication
+>
+> Sign-in 
+>
+> Login page will be a nested route 
+>
+> Sign In Page 
+>
+> Magic Link == npm install --save magic-sdk
+>
+> Loading state while loggin in
+>
+> Routing Delay with Login
+>
+>Signout a user
+>
+> Flickering of the page fixed
+>
+> Loading component
+
