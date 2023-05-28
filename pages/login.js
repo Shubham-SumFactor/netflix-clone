@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Login.module.css"
 import Image from "next/image"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import {magic} from "../lib/magic-client"
 
@@ -13,11 +13,27 @@ const Login = () => {
     
     const router = useRouter();
 
+    useEffect(() => {
+
+        const handleComplete = () => {
+            setIsLoading(false);
+        }
+
+        router.events.on('routeChangeComplete', handleComplete);
+        router.events.on('routeChangeError', handleComplete);
+       
+
+        return () => {
+        router.events.off('routeChangeComplete', handleComplete);
+        router.events.off('routeChangeError', handleComplete);
+    };
+    }, [router]);
+
     const handleOnChangeEmail = (e) => {
         setUserMsg("");
         console.log("event", e);
         const email = e.target.value;
-      setEmail(email);
+        setEmail(email);
     };
 
     const handleLoginWithEmail = async (e) => {
@@ -34,7 +50,7 @@ const Login = () => {
             //magic-ext/auth auth.loginWithMagicLink()` i
             console.log({didToken});
             if(didToken){
-                setIsLoading(false);
+              
                 router.push("/");
             }
               } catch (error){
