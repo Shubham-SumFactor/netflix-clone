@@ -51,3 +51,11 @@
 >
 > Loading component
 
+========================================================================
+# Section 16
+## Incremental Static Generation
+>
+>Dynamic Route 
+>
+> Linking Dynamic Page to Card component
+
