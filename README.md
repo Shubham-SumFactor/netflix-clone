@@ -46,3 +46,8 @@
 > Routing Delay with Login
 >
 >Signout a user
+>
+> Flickering of the page fixed
+>
+> Loading component
+
