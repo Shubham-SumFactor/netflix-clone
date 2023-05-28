@@ -38,3 +38,11 @@
 > Login page will be a nested route 
 >
 > Sign In Page 
+>
+> Magic Link == npm install --save magic-sdk
+>
+> Loading state while loggin in
+>
+> Routing Delay with Login
+>
+>Signout a user
