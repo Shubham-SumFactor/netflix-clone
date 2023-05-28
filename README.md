@@ -34,3 +34,7 @@
 > Passwordless Authentication
 >
 > Sign-in 
+>
+> Login page will be a nested route 
+>
+> Sign In Page 
