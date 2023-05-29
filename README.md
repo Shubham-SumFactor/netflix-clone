@@ -45,9 +45,32 @@
 >
 > Routing Delay with Login
 >
->Signout a user
+> Signout a user
 >
 > Flickering of the page fixed
 >
 > Loading component
+
+========================================================================
+# Section 16
+## Incremental Static Generation
+>
+>Dynamic Route 
+>
+> Linking Dynamic Page to Card component
+>
+> BAnner Component has play button which redirect to the specific video/[videoId]
+>
+> React Modal
+> 
+> npm install --save react-modal
+>
+> Implementing YouTube Player
+>
+## Data Fetching Techniques to use
+> ISR
+>YT API
+>YT Quota Limit
+
+
 

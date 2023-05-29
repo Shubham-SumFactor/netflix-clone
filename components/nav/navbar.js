@@ -6,9 +6,9 @@ import Image from 'next/image';
 import { magic } from '../../lib/magic-client'
 
 const Navbar = () => {
-
-    const [showDropdown, setShowDropdown] = useState(false);
     const [username, setUsername] = useState('');
+    const [showDropdown, setShowDropdown] = useState(false);
+
     const router = useRouter();
 
     useEffect(() => {
@@ -28,17 +28,17 @@ const Navbar = () => {
 
 
     const handleOnClickHome = (e) => {
-        e.preventDefault()
-        router.push('/')
+        e.preventDefault();
+        router.push('/');
 
-    }
+    };
     const handleOnClickMyList = (e) => {
-        e.preventDefault()
-        router.push('/browse/my-List')
+        e.preventDefault();
+        router.push('/browse/my-List');
     };
 
     const handleShowDropdown =(e) =>{
-        e.preventDefault()
+        e.preventDefault();
         setShowDropdown(!showDropdown);
 
     };
@@ -49,11 +49,11 @@ const Navbar = () => {
         try {
             await magic.user.logout();
             console.log(await magic.user.isLoggedIn()); // => `false`
-            router.push('/login')
+            router.push("/login")
         } catch(error) {
             // Handle errors if required!
             console.log("Error logging out:", error);
-            router.push('/login')
+            router.push("/login")
           }
     };
        return( 
@@ -96,7 +96,7 @@ const Navbar = () => {
                     {showDropdown && (
                     <div className={styles.navDropdown}>
                         <div>
-                            <a href="/login" onClick={handleSignout} className={styles.linkName}>
+                            <a  onClick={handleSignout} className={styles.linkName}>
                             Sign out
                             </a>
                             <div className={styles.lineWrapper}></div>

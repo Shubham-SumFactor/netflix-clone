@@ -7,21 +7,22 @@ import Loading from '@/components/loading/loading';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
- const [isLoading, setIsLoading] = useState(true);
+ const [isLoading, setIsLoading] = useState(false);
  
-  useEffect(async ()=> {
+  useEffect( ()=> {
 
-   const isLoggedIn = await magic.user.isLoggedIn();
-
-   if(isLoggedIn) {
-   // setIsLoading(false);
-    router.push('/');
-   }
-   else{
-    //setIsLoading(false);
-    router.push('/login')
-   }
-  },[]);
+    //const handleLoggedIn = async () => {
+    //const isLoggedIn = await magic.user.isLoggedIn();
+    //if(isLoggedIn) {
+    //// setIsLoading(false);
+    // router.push('/');
+    //}
+    //else{
+    // //setIsLoading(false);
+    // router.push('/login')
+    //}};
+    //handleLoggedIn();
+    },[]);
 
   useEffect(() => {
 
@@ -36,11 +37,8 @@ export default function App({ Component, pageProps }) {
     return () => {
     router.events.off('routeChangeComplete', handleComplete);
     router.events.off('routeChangeError', handleComplete);
-};
+}
 }, [router]);
 
-  return isLoading ? <Loading /> : 
-
-
-   <Component {...pageProps} />
+  return isLoading ? <Loading /> : <Component {...pageProps} />
 }
