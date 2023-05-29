@@ -35,6 +35,7 @@ export default function Home( { disneyVideos, productivityVideos, travelVideos, 
       <div className={styles.main}>
           <NavBar username="TomRiddle@hogwartz.com"/>
           <Banner
+          videoId="4zH5iYM4wJo"
           title="Harry Potter"
           subTitle="Mysterious Rise"
           imgUrl="/static/HP.webp"

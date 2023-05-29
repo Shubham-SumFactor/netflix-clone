@@ -58,4 +58,8 @@
 >Dynamic Route 
 >
 > Linking Dynamic Page to Card component
-
+>
+> BAnner Component has play button which redirect to the specific video/[videoId]
+>
+>React Modal 
+> npm install --save react-modal
