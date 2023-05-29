@@ -1,30 +1,52 @@
 import { useRouter } from "next/router";
 import Modal from 'react-modal';
 import styles from "../../styles/Video.module.css"
-
+import Navbar from "@/components/nav/navbar";
 import clsx from "classnames";
+import { getYoutubeVideoById } from "@/lib/videos";
 
 Modal.setAppElement('#__next');
 
-const Video = () => {
+export async function getStaticProps(context) {
+
+
+console.log({context})
+
+//const videoId = "e6-bh1sMoEA"
+const videoId = context.params.videoId;
+
+const videoArray =await getYoutubeVideoById(videoId);
+
+  return {
+    props: {
+      video: videoArray.length > 0 ? videoArray[0]: {},
+    },
+    revalidate: 10,
+  };
+}
+
+export async function getStaticPaths() {
+  const listOfVideos = ["mYfJxlgR2jw", "e6-bh1sMoEA", "KCPEHsAViiQ"]
+  // Get the paths we want to pre-render based on posts
+  const paths = listOfVideos.map((videoId) => ({
+    params: { videoId },
+  }));
+ 
+  return { paths, fallback: 'blocking' };
+}
+
+const Video = ({ video }) => {
     const router = useRouter();
   //  console.log( { router } );
 
-  const video = {
-    title: 'Voldemort',
-    publishTime: '18-18-2018',
-    description:'The Origin of the Heir | Half Blood Prince Tom Marvolo Riddle, the half-blood orphan, was to transform himself into Lord Voldemort and take control of the Wizarding world by manipulating the festering relationship between pureblood and Muggle-born wizards. Eventually he would lose all – not because he lacked power, but because of his ruthless methods, his inability to love or trust anyone but himself, and his belief in his own infallibility. As he told Quirrell, he believed that “there is no good and evil, there is only power, and those too weak to seek it.”',
-    channelTitle: "Tryangle Films",
-    viewCount: 181818,
 
-  };
 
-  const { title, publishTime, description, channelTitle, viewCount } = video;
+  const { title, publishTime, description, channelTitle, statistics:{viewCount} ={ viewCount: 0},  } = video;
 
 
     return (
         <div className={styles.container}>
-
+            <Navbar />
             <Modal
                  isOpen={true}
                   contentLabel="Watch the video"
