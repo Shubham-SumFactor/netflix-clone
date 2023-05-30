@@ -12,7 +12,7 @@ const Navbar = () => {
     const router = useRouter();
 
     useEffect(() => {
-        async function getUsername() {
+        async function logout() {
           try {
             const { email } = await magic.user.getMetadata();
             if (email) {
@@ -23,9 +23,10 @@ const Navbar = () => {
             console.log("Error retrieving email:", error);
           }
         }
-        getUsername();
+        logout();
       }, []);
 
+ 
 
     const handleOnClickHome = (e) => {
         e.preventDefault();
@@ -43,7 +44,7 @@ const Navbar = () => {
 
     };
 
-    const handleSignout = async (e) => {
+    const handleSignOut = async (e) => {
         e.preventDefault();
 
         try {
@@ -60,7 +61,7 @@ const Navbar = () => {
         <div className={styles.container}>
             <div className={styles.wrapper}>
 
-                <a className={styles.logoLink} href='/'>
+                <a className={styles.logoLink}>
                     <div className={styles.logoWrapper}>
                     <Image
                           src="/static/netflix.svg"
@@ -96,9 +97,9 @@ const Navbar = () => {
                     {showDropdown && (
                     <div className={styles.navDropdown}>
                         <div>
-                            <a  onClick={handleSignout} className={styles.linkName}>
+                            <Link  onClick={handleSignOut} className={styles.linkName}>
                             Sign out
-                            </a>
+                            </Link>
                             <div className={styles.lineWrapper}></div>
                         </div>
                     </div> 
