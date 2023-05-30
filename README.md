@@ -82,7 +82,9 @@ HAsura GraphQL
 >
 >Hasura 
 > DB Architecture 
->Set Up DB
+> Set Up DB
+> Query Live Hasura Server
+> JWT = json web token 
 
 
 
