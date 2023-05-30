@@ -76,7 +76,13 @@
 
 # Section 17
 HAsura GraphQL
->Overview
+> Overview
+> GraphQL
+> GQL Query Vs Mutation
+>
+>Hasura 
+> DB Architecture 
+>Set Up DB
 
 
 
