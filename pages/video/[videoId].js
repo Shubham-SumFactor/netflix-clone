@@ -60,7 +60,7 @@ const Video = ({ video }) => {
         type="text/html" 
         width="100%" 
         height="360"
-        src={`https://www.youtube.com/embed/${router.query.video}?autoplay=0&origin=http://example.com&controls=0&rel=1`}
+        src={`https://www.youtube.com/embed/${router.query.videoId}?autoplay=0&origin=http://example.com&controls=0&rel=1`}
         frameborder="0">
 
         </iframe>
