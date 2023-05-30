@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Banner from '../components/banner/banner'
-import NavBar from '@/components/nav/navbar'
+import Navbar from '@/components/nav/navbar'
 import Card from '@/components/card/card'
 import SectionCards from "../components/card/section-cards"
 const inter = Inter({ subsets: ['latin'] })
@@ -12,9 +12,9 @@ import { getPopularVideos, getVideos } from '@/lib/videos'
 
 export async function getServerSideProps() {
   const disneyVideos =  await getVideos("disney trailer");
-  const productivityVideos =  await getVideos("productivity");
-  const travelVideos =  await getVideos("travel");
-  const popularVideos =  await getPopularVideos("disney trailer");
+  const productivityVideos =  await getVideos("productivity trailer");
+  const travelVideos =  await getVideos("travel trailer");
+  const popularVideos =  await getPopularVideos();
  
 
   return { props: 
@@ -23,6 +23,7 @@ export async function getServerSideProps() {
 
 export default function Home( { disneyVideos, productivityVideos, travelVideos, popularVideos } ) {
 
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -33,13 +34,15 @@ export default function Home( { disneyVideos, productivityVideos, travelVideos, 
       </Head>
      
       <div className={styles.main}>
-          <NavBar username="TomRiddle@hogwartz.com"/>
+          <Navbar />
+        
+          
           <Banner
          // videoId="4zH5iYM4wJo"
-         videoId="e6-bh1sMoEA"
-          title="Voldemort"
-          subTitle="Origin Of The Heir"
-          imgUrl="/static/HP.webp"
+         videoId="4zH5iYM4wJo"
+          title="Clifford the red dog"
+          subTitle="a very cute dog"
+          imgUrl="/static/clifford.webp"
           />
          
          <div className={styles.sectionWrapper}>

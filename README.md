@@ -72,5 +72,20 @@
 >YT API
 >YT Quota Limit
 
+=============================================
+
+# Section 17
+HAsura GraphQL
+> Overview
+> GraphQL
+> GQL Query Vs Mutation
+>
+>Hasura 
+> DB Architecture 
+> Set Up DB
+> Query Live Hasura Server
+> JWT = json web token 
+
+
 
 

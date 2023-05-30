@@ -5,18 +5,17 @@ import Link from "next/link";
 const SectionCards = (props) => {
 
     const { title, videos = [], size } = props;
-        console.log({ videos });
+       // console.log({ videos });
     return (
         <section className={styles.container}>
             <h2 className={styles.title}>{title}</h2>
             <div className={styles.cardWrapper}>
                 { videos.map((video, idx) => {
-                    return 
-                    <Link  href={`/video/${video.id}`}>
-                        <a>
-                    <Card id = {idx} imgUrl={video.imgUrl}
+                    return <Link key={idx} href={`/video/${video.id}`}>
+                        
+                    <Card key={idx} id = {idx} imgUrl={video.imgUrl}
                 size={size} />
-               </a> </Link>
+                </Link>
                 })}
             </div>
 

@@ -26,7 +26,7 @@ const videoArray =await getYoutubeVideoById(videoId);
 }
 
 export async function getStaticPaths() {
-  const listOfVideos = ["mYfJxlgR2jw", "e6-bh1sMoEA", "KCPEHsAViiQ"]
+  const listOfVideos = ["mYfJxlgR2jw", "4zH5iYM4wJo", "KCPEHsAViiQ"]
   // Get the paths we want to pre-render based on posts
   const paths = listOfVideos.map((videoId) => ({
     params: { videoId },
@@ -45,7 +45,7 @@ const Video = ({ video }) => {
 
 
     return (
-        <div className={styles.container}>
+      <div className={styles.container}>
             <Navbar />
             <Modal
                  isOpen={true}
@@ -95,7 +95,8 @@ const Video = ({ video }) => {
  
       </Modal>
         </div>
-    )
+    );
+    
 };
 
 export default Video;
