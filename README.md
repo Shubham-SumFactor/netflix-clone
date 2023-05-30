@@ -86,6 +86,10 @@ HAsura GraphQL
 > Query Live Hasura Server
 > JWT = json web token 
 
+===================================
+# Section 18
+## Authentication with Hasura
+
 
 
 
