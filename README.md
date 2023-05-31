@@ -85,10 +85,25 @@ HAsura GraphQL
 > Set Up DB
 > Query Live Hasura Server
 > JWT = json web token 
+>
+>https://jwt.io/#debugger-io
+>
+>https://hasura.io/docs/latest/auth/authentication/jwt/#configuring-jwt-mode
 
 ===================================
 # Section 18
 ## Authentication with Hasura
+>
+> Overview 
+>
+> Architecture
+>
+> POSTMAN 
+>Take a look at the docs to see how to use it: https://learning.postman.com/docs/getting-started/sending-the-first-request/
+>
+1> Authorization token : created a file in api => login.js
+>
+>  npm install --save @magic-sdk/admin
 
 
 
