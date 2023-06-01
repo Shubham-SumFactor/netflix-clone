@@ -101,9 +101,15 @@ HAsura GraphQL
 > POSTMAN 
 >Take a look at the docs to see how to use it: https://learning.postman.com/docs/getting-started/sending-the-first-request/
 >
-1> Authorization token : created a file in api => login.js
+1 Authorization token : created a file in api => login.js
 >
 >  npm install --save @magic-sdk/admin
+>
+2 JWT token server side 
+>
+> https://www.npmjs.com/package/jsonwebtoken
+> 
+> npm install jsonwebtoken
 
 
 
