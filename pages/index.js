@@ -1,13 +1,14 @@
 import Head from 'next/head'
-import Image from "next/image"
+
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Banner from '../components/banner/banner'
 import Navbar from '@/components/nav/navbar'
-import Card from '@/components/card/card'
+
 import SectionCards from "../components/card/section-cards"
 const inter = Inter({ subsets: ['latin'] })
 import { getPopularVideos, getVideos } from '@/lib/videos'
+
 
 
 export async function getServerSideProps() {
@@ -23,7 +24,7 @@ export async function getServerSideProps() {
 
 export default function Home( { disneyVideos, productivityVideos, travelVideos, popularVideos } ) {
 
-  
+
   return (
     <div className={styles.container}>
       <Head>

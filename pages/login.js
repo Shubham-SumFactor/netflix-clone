@@ -42,7 +42,7 @@ const Login = () => {
 
 
         if(email) {
-            if( email === "shubham.sumfactor@gmail.com"){   
+            
                       // log in a user by their email
             try {
                 setIsLoading(true);
@@ -50,19 +50,30 @@ const Login = () => {
             //magic-ext/auth auth.loginWithMagicLink()` i
             console.log({didToken});
             if(didToken){
-              
-                router.push("/");
+
+              const response = await fetch('/api/login', {
+
+                method: 'POST',
+                headers:{
+                    'Authorization': `Bearer ${didToken}`,
+                    'Content-Type' :'application/json'
+                    },
+                });
+
+                const loggedInResponse = await response.json();
+                if (loggedInResponse.done){
+                    console.log({ loggedInResponse });
+                   router.push("/");
+                } else{
+                    setIsLoading(false);
+                    setUserMsg("Something went wrong logging in");
+                }
             }
               } catch (error){
                 // Handle errors if required!
                 console.log(" Something went wrong logging in"), error;
                 setIsLoading(false); 
-            }
-
-        } else {
-            setIsLoading(false);
-            setUserMsg(" Something went wrong logging in");
-        }    
+            } 
      }   else {
             //show user message
             setIsLoading(false);
