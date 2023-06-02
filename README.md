@@ -126,3 +126,11 @@ HAsura GraphQL
 >  const setCookie = cookie.serialize('name',value,{Optional});
 >    
 >Serialize a cookie name-value pair into a Set-Cookie header string. The name argument is the name for the cookie, the value argument is the value to set the cookie to, and the options argument is an optional object containing additional serialization options.
+
+=================================
+# Section 19
+
+## Ratings Service {Likes & Dislike} and My List 
+
+>
+>Section Overview
