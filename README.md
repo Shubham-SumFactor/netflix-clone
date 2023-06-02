@@ -69,7 +69,9 @@
 >
 ## Data Fetching Techniques to use
 > ISR
+>
 >YT API
+>
 >YT Quota Limit
 
 =============================================
@@ -81,9 +83,12 @@ HAsura GraphQL
 > GQL Query Vs Mutation
 >
 >Hasura 
-> DB Architecture 
+> DB Architecture
+> 
 > Set Up DB
+>
 > Query Live Hasura Server
+>
 > JWT = json web token 
 >
 >https://jwt.io/#debugger-io
@@ -98,12 +103,13 @@ HAsura GraphQL
 >
 > Architecture
 >
-> POSTMAN 
+> POSTMAN
+> 
 >Take a look at the docs to see how to use it: https://learning.postman.com/docs/getting-started/sending-the-first-request/
 >
 1 Authorization token : created a file in api => login.js
 >
->  npm install --save @magic-sdk/admin
+> npm install --save @magic-sdk/admin
 >
 2 JWT token server side 
 >
@@ -112,5 +118,11 @@ HAsura GraphQL
 > npm install jsonwebtoken
 
 
-
-
+# cookie
+> store jwt token as cookie 
+>
+>$ npm install cookie
+>
+>  const setCookie = cookie.serialize('name',value,{Optional});
+>    
+>Serialize a cookie name-value pair into a Set-Cookie header string. The name argument is the name for the cookie, the value argument is the value to set the cookie to, and the options argument is an optional object containing additional serialization options.
