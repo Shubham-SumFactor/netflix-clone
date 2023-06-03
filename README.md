@@ -130,7 +130,32 @@ HAsura GraphQL
 =================================
 # Section 19
 
-## Ratings Service {Likes & Dislike} and My List 
+## Rating Service {Likes & Dislike} and My List 
 
 >
->Section Overview
+> Section Overview
+>
+> App Architecture
+>
+> like and dislike a vid
+>
+>: Watch it again => Watched by a user.
+>
+> My List Page => Favourited vids
+>
+> *everything is related and revolves around videoId*
+>
+> VideoId associated to the user => in the hasura table
+> Query data on homepage
+>
+> API => all info about video
+> stats (hasura table)
+>
+> /stats
+>> 1 Read token from cookie 
+>
+>> 2 verify Jason token 
+>
+>> 3 find video by Id and by user
+>> a yes => Update stats for that user (GQL mutation)
+>> b No => create new stats for that user
