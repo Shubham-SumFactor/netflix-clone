@@ -4,6 +4,8 @@ import styles from "../../styles/Video.module.css"
 import Navbar from "@/components/nav/navbar";
 import clsx from "classnames";
 import { getYoutubeVideoById } from "@/lib/videos";
+import Like from "@/components/icons/like-icon";
+import DisLike from "@/components/icons/dislike-icon";
 
 Modal.setAppElement('#__next');
 
@@ -43,6 +45,14 @@ const Video = ({ video }) => {
 
   const { title, publishTime, description, channelTitle, statistics:{viewCount} ={ viewCount: 0},  } = video;
 
+  const handleToggleDisLike = () => {
+    console.log("handleToggleDislike");
+  }
+
+  const handleToggleLike = () => {
+    console.log("handleToggleLike");
+  }
+  
 
     return (
       <div className={styles.container}>
@@ -64,6 +74,23 @@ const Video = ({ video }) => {
         frameborder="0">
 
         </iframe>
+
+        <div className={styles.likeDislikeBtnWrapper}>
+              <div className={styles.likeBtnWrapper}>
+                <button onClick={handleToggleLike}>              
+                  <div className={styles.btnWrapper}>
+                    <Like />
+                  </div>
+                </button>
+              </div>
+
+              <button onClick={handleToggleDisLike}>
+              <div className={styles.btnWrapper}>
+                  <DisLike />
+                
+              </div>
+              </button>
+        </div>
 
         <div className={styles.modalBody}>
             <div className={styles.modalBodyContent}>
