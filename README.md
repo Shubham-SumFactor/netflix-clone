@@ -163,3 +163,33 @@ HAsura GraphQL
 =====
 ## Like And Dislike button 
 
+=> funcationality
+
+# stats api creation
+> /stats\
+>
+>1 read token from cookies
+>
+> verify JWT
+>
+>Find Video by videoId and by user
+>
+> yes => update stat for that user 
+
+>
+> no => create new stats for that user
+
+# stats API overview with JWT Verification
+>2 Verify json token JWT
+> 
+> const decode = jwt.verify(token, key)
+>
+> stats API Design GraphQL
+> **find video by ID and by user (GQL query)**
+>
+> issuer (PK) in the users table is UserId in stats table (fk)
+>
+> insert and update API
+
+## **Like Dislike Functionality**
+>
