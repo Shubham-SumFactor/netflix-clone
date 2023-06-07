@@ -192,4 +192,23 @@ HAsura GraphQL
 > insert and update API
 
 ## **Like Dislike Functionality**
+> Testing of Like and dislike
 >
+>GET Req to fetch the data available on Stats table in hasura
+>
+>invoke Stats API on frontend
+>
+
+## Watch It Again
+>
+> Architecture 
+>
+> Section card added with the prop of watchedvideos which fetch the like or dislike vid.
+>
+> HD image ImgUrl added
+> 
+> Removing hard coded token n userID from the index.js
+>
+>Cookies inside SSR
+>
+> read token from cookies => verify JSon Token (JWT) => GQL query mutation
