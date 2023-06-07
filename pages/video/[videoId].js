@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import { useRouter } from "next/router";
 import Modal from 'react-modal';
 import styles from "../../styles/Video.module.css"
@@ -46,27 +46,54 @@ const Video = ({ video }) => {
   const [toggleLike, setToggleLike] = useState(false);
   const [toggleDisLike, setToggleDisLike] = useState(false);
 
-
   const { title, publishTime, description, channelTitle, statistics:{viewCount} ={ viewCount: 0},  } = video;
 
-  const handleToggleDisLike = async() => {
-    console.log("handleToggleDislike");
-    setToggleDisLike(!toggleDisLike);
-    setToggleLike(toggleDisLike);
+  useEffect (() =>{
+    const handleLikeDislikeService = async () => {
+   const response = await fetch(`/api/stats?videoId=${videoId}`,{
+      method: 'GET',
+    
+    });
+    const data = await response.json();
+    console.log({data});
 
-    const val = !toggleDisLike
+    if( data.length > 0) {
+      const favourited = data[0].favourited;
+      if (favourited === 1) {
+        setToggleLike(true);
+      }else if (favourited === 0){
+        setToggleDisLike(true)
 
-    const response = await fetch('/api/stats',{
+      }
+    }
+  }
+  handleLikeDislikeService();
+
+  }, [videoId]);
+
+  const runRatingService = async(favourited) => {
+    return await fetch('/api/stats',{
       method: 'POST',
       body: JSON.stringify({
         videoId, 
-        favourited: val ? 0 : 1, 
+        favourited, 
 
       }),
       headers:{
         "Content-Type": "application/json",
       }
     });
+
+  }
+
+  const handleToggleDisLike = async() => {
+    console.log("handleToggleDislike");
+    setToggleDisLike(!toggleDisLike);
+    setToggleLike(toggleDisLike);
+
+    const val = !toggleDisLike;
+    const favourited = val ? 0 :1
+    const response = await runRatingService(favourited)
     console.log('data', await response.json());
 
   }
@@ -77,17 +104,10 @@ const Video = ({ video }) => {
     setToggleLike(val);
     setToggleDisLike(toggleLike);
 
-    const response = await fetch('/api/stats',{
-      method: 'POST',
-      body: JSON.stringify({
-        videoId, 
-        favourited: val ? 1 : 0, 
-
-      }),
-      headers:{
-        "Content-Type": "application/json",
-      }
-    });
+ 
+    const favourited = val ? 1 : 0;
+    const response = await runRatingService(favourited)
+ 
     console.log('data', await response.json());
   };
   
