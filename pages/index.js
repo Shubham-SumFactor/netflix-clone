@@ -57,7 +57,7 @@ export default function Home( { disneyVideos, productivityVideos, travelVideos, 
          videoId="4zH5iYM4wJo"
           title="Clifford the red dog"
           subTitle="a very cute dog"
-          imgUrl="/static/clifford.webp"
+          imgUrl="/static/DogClifford.webp"
           />
          
          <div className={styles.sectionWrapper}>
