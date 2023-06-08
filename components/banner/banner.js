@@ -42,11 +42,12 @@ const Banner = (props) =>{
             className={styles.bannerImg} 
             style={{ 
             backgroundImage: `url(${imgUrl})`,
-            width: '100%', 
-            height:"100%",
-            position: 'absolute',
-            backgroundSize: 'cover',
-            backgroundPosition: "50% 50%"}}>
+    //        width: '100%', 
+      //      height:"100%",
+        //    position: 'absolute',
+          //  backgroundSize: 'cover',
+            //backgroundPosition: "50% 50%"
+        }}>
        </div>
 
    </div>

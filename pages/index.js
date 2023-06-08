@@ -7,11 +7,25 @@ import Navbar from '@/components/nav/navbar'
 
 import SectionCards from "../components/card/section-cards"
 const inter = Inter({ subsets: ['latin'] })
-import { getPopularVideos, getVideos } from '@/lib/videos'
+import { getPopularVideos, getVideos, getWatchItAgainVideos } from '@/lib/videos'
 
+import useRedirectUser from '@/utils/redirectUser'
 
+export async function getServerSideProps(context) {
+  const { userId, token } = await useRedirectUser(context);
 
-export async function getServerSideProps() {
+  if(!userId) {
+    return {
+      props: {},
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+  }
+  
+  const watchItAgainVideos = await getWatchItAgainVideos(userId, token);
+
   const disneyVideos =  await getVideos("disney trailer");
   const productivityVideos =  await getVideos("productivity trailer");
   const travelVideos =  await getVideos("travel trailer");
@@ -19,10 +33,10 @@ export async function getServerSideProps() {
  
 
   return { props: 
-    { disneyVideos, productivityVideos, travelVideos, popularVideos } };
+    { disneyVideos, productivityVideos, travelVideos, popularVideos, watchItAgainVideos } };
 }
 
-export default function Home( { disneyVideos, productivityVideos, travelVideos, popularVideos } ) {
+export default function Home( { disneyVideos, productivityVideos, travelVideos, popularVideos, watchItAgainVideos  } ) {
 
 
   return (
@@ -43,11 +57,12 @@ export default function Home( { disneyVideos, productivityVideos, travelVideos, 
          videoId="4zH5iYM4wJo"
           title="Clifford the red dog"
           subTitle="a very cute dog"
-          imgUrl="/static/clifford.webp"
+          imgUrl="/static/DogClifford.webp"
           />
          
          <div className={styles.sectionWrapper}>
           <SectionCards  title = "Disney" videos={disneyVideos} size="large"/>
+          <SectionCards  title = "Watch It Again" videos={watchItAgainVideos} size="small"/>
           <SectionCards  title = "Travel" videos={travelVideos} size="small"/>
           <SectionCards  title = "Productivity" videos={productivityVideos} size="medium"/>
           <SectionCards  title = "Popular" videos={popularVideos} size="small"/>

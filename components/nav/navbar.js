@@ -8,7 +8,7 @@ import { magic } from '../../lib/magic-client'
 const Navbar = () => {
     const [username, setUsername] = useState('');
     const [showDropdown, setShowDropdown] = useState(false);
-
+    const [didToken, setDidToken] = useState("");
     const router = useRouter();
 
     useEffect(() => {
@@ -20,6 +20,7 @@ const Navbar = () => {
             if (email) {
              // console.log(email);
               setUsername(email);
+              setDidToken(didToken);
             }
           } catch (error) {
             console.log("Error retrieving email:", error);
@@ -37,7 +38,7 @@ const Navbar = () => {
     };
     const handleOnClickMyList = (e) => {
         e.preventDefault();
-        router.push('/browse/my-List');
+        router.push('/browse/my-list');
     };
 
     const handleShowDropdown =(e) =>{
@@ -50,9 +51,15 @@ const Navbar = () => {
         e.preventDefault();
 
         try {
-            await magic.user.logout();
-            console.log(await magic.user.isLoggedIn()); // => `false`
-            router.push("/login")
+            const response = await fetch("/api/logout", {
+                method: "POST",
+                headers: {
+                  Authorization: `Bearer ${didToken}`,
+                  "Content-Type": "application/json",
+                },
+              });
+        
+              const res = await response.json();
         } catch(error) {
             // Handle errors if required!
             console.log("Error logging out:", error);
@@ -105,7 +112,7 @@ const Navbar = () => {
                             <div className={styles.lineWrapper}></div>
                         </div>
                     </div> 
-                      )};
+                      )}
                 </div>
             </nav>
           

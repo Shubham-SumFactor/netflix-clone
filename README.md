@@ -126,3 +126,100 @@ HAsura GraphQL
 >  const setCookie = cookie.serialize('name',value,{Optional});
 >    
 >Serialize a cookie name-value pair into a Set-Cookie header string. The name argument is the name for the cookie, the value argument is the value to set the cookie to, and the options argument is an optional object containing additional serialization options.
+
+=================================
+# Section 19
+
+## Rating Service {Likes & Dislike} and My List 
+
+>
+> Section Overview
+>
+> App Architecture
+>
+> like and dislike a vid
+>
+>: Watch it again => Watched by a user.
+>
+> My List Page => Favourited vids
+>
+> *everything is related and revolves around videoId*
+>
+> VideoId associated to the user => in the hasura table
+> Query data on homepage
+>
+> API => all info about video
+> stats (hasura table)
+>
+> /stats
+>> 1 Read token from cookie 
+>
+>> 2 verify Jason token 
+>
+>> 3 find video by Id and by user
+>> a yes => Update stats for that user (GQL mutation)
+>> b No => create new stats for that user
+
+=====
+## Like And Dislike button 
+
+=> funcationality
+
+# stats api creation
+> /stats\
+>
+>1 read token from cookies
+>
+> verify JWT
+>
+>Find Video by videoId and by user
+>
+> yes => update stat for that user 
+
+>
+> no => create new stats for that user
+
+# stats API overview with JWT Verification
+>2 Verify json token JWT
+> 
+> const decode = jwt.verify(token, key)
+>
+> stats API Design GraphQL
+> **find video by ID and by user (GQL query)**
+>
+> issuer (PK) in the users table is UserId in stats table (fk)
+>
+> insert and update API
+
+## **Like Dislike Functionality**
+> Testing of Like and dislike
+>
+>GET Req to fetch the data available on Stats table in hasura
+>
+>invoke Stats API on frontend
+>
+
+## Watch It Again
+>
+> Architecture 
+>
+> Section card added with the prop of watchedvideos which fetch the like or dislike vid.
+>
+> HD image ImgUrl added
+> 
+> Removing hard coded token n userID from the index.js
+>
+>Cookies inside SSR
+>
+> read token from cookies => verify JSon Token (JWT) => GQL query mutation
+
+## My-List 
+> Hasura Query 
+>
+>Server side Render 
+> 
+> Wrap Cards
+>
+> Logout with removing cookie token
+>
+> SSR redirect implemented
