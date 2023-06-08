@@ -26,9 +26,12 @@ const MyList = ({ myListVideos }) => {
                     <Navbar />
                     <div className={styles.sectionWrapper}>
                         <SectionCards  
-                        title = "My List" 
-                        videos={myListVideos} 
-                        size="small"/>
+                            title = "My List" 
+                            videos={myListVideos} 
+                            size="small"
+                            shouldWrap
+                            shouldScale={false}
+                        />
                     </div>
                 </main>
             </div>
