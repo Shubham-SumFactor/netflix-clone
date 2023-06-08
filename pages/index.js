@@ -36,7 +36,7 @@ export async function getServerSideProps(context) {
     { disneyVideos, productivityVideos, travelVideos, popularVideos, watchItAgainVideos } };
 }
 
-export default function Home( { disneyVideos, productivityVideos, travelVideos, popularVideos, watchItAgainVideos = [] } ) {
+export default function Home( { disneyVideos, productivityVideos, travelVideos, popularVideos, watchItAgainVideos  } ) {
 
 
   return (
