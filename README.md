@@ -212,3 +212,14 @@ HAsura GraphQL
 >Cookies inside SSR
 >
 > read token from cookies => verify JSon Token (JWT) => GQL query mutation
+
+## My-List 
+> Hasura Query 
+>
+>Server side Render 
+> 
+> Wrap Cards
+>
+> Logout with removing cookie token
+>
+> SSR redirect implemented
