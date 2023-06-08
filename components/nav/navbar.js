@@ -37,7 +37,7 @@ const Navbar = () => {
     };
     const handleOnClickMyList = (e) => {
         e.preventDefault();
-        router.push('/browse/my-List');
+        router.push('/browse/my-list');
     };
 
     const handleShowDropdown =(e) =>{
