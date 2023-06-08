@@ -112,7 +112,7 @@ const Navbar = () => {
                             <div className={styles.lineWrapper}></div>
                         </div>
                     </div> 
-                      )};
+                      )}
                 </div>
             </nav>
           
