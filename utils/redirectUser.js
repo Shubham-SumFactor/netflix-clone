@@ -6,15 +6,7 @@ const useRedirectUser = async (context) => {
 
 const userId = await verifyToken(token);
 
-  if(!userId) {
-    return {
-      props: {},
-      redirect: {
-        destination: '/login',
-        permanent: false,
-      },
-    };
-  }
+
   return {
     userId,
     token
