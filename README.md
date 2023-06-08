@@ -223,3 +223,9 @@ HAsura GraphQL
 > Logout with removing cookie token
 >
 > SSR redirect implemented
+
+=====================================
+# Section20
+> **The new features**
+>
+> **Middleware Intro**
