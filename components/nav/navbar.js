@@ -1,6 +1,5 @@
 import styles from "./navbar.module.css";
 import { useRouter } from "next/router";
-import Link from 'next/link'
 import { useEffect, useState } from "react";
 import Image from 'next/image';
 import { magic } from '../../lib/magic-client'
@@ -16,9 +15,9 @@ const Navbar = () => {
           try {
             const { email, issuer } = await magic.user.getMetadata();
            const didToken = await magic.user.getIdToken();
-            console.log({ didToken });
+           
             if (email) {
-             // console.log(email);
+           
               setUsername(email);
               setDidToken(didToken);
             }

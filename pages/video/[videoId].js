@@ -12,9 +12,6 @@ Modal.setAppElement('#__next');
 
 export async function getStaticProps(context) {
 
-
-console.log({context})
-
 //const videoId = "e6-bh1sMoEA"
 const videoId = context.params.videoId;
 
@@ -40,7 +37,7 @@ export async function getStaticPaths() {
 
 const Video = ({ video }) => {
     const router = useRouter();
-  //  console.log( { router } );
+ 
   const videoId = router.query.videoId;
 
   const [toggleLike, setToggleLike] = useState(false);
@@ -55,7 +52,7 @@ const Video = ({ video }) => {
     
     });
     const data = await response.json();
-    console.log({data});
+  
 
     if( data.length > 0) {
       const favourited = data[0].favourited;
@@ -87,19 +84,19 @@ const Video = ({ video }) => {
   }
 
   const handleToggleDisLike = async() => {
-    console.log("handleToggleDislike");
+    
     setToggleDisLike(!toggleDisLike);
     setToggleLike(toggleDisLike);
 
     const val = !toggleDisLike;
     const favourited = val ? 0 :1
     const response = await runRatingService(favourited)
-    console.log('data', await response.json());
+  
 
   }
 
   const handleToggleLike = async () => {
-    console.log("handleToggleLike");
+
     const val  = !toggleLike
     setToggleLike(val);
     setToggleDisLike(toggleLike);
@@ -108,7 +105,7 @@ const Video = ({ video }) => {
     const favourited = val ? 1 : 0;
     const response = await runRatingService(favourited)
  
-    console.log('data', await response.json());
+    
   };
   
 
