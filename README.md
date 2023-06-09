@@ -223,3 +223,19 @@ HAsura GraphQL
 > Logout with removing cookie token
 >
 > SSR redirect implemented
+
+=====================================
+# Section20
+> **The new features**
+>
+> *Middleware Intro*
+>
+> Middleware allows you to run code before a request is completed. Then, based on the incoming request, you can modify the response by rewriting, redirecting, modifying the request or response headers, or responding directly.
+
+Middleware runs before cached content and routes are matched.
+>
+> npm install jose => to verify token  
+>
+> https://nextjs.org/docs/pages/building-your-application/routing/middleware
+>
+>we are using a Middleware function that uses Response.redirect(url), NextResponse.redirect(url) or NextResponse.rewrite(url) where url is a relative or an invalid URL.
